@@ -1,4 +1,4 @@
-import { beginCell } from '@ton/ton'
+import { beginCell, toNano } from '@ton/ton'
 import { useStore } from '../store/store'
 import { TonConnectButton, useTonConnectUI } from '@tonconnect/ui-react'
 
@@ -23,7 +23,7 @@ export default () => {
             messages: [
                 {
                     address: config.address,
-                    amount: `${value}000000`,
+                    amount: toNano(value).toString(),
                     payload,
                 },
             ],
